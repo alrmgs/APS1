@@ -53,6 +53,14 @@ public class MatrizesArquivos {
                 System.out.println("--- MATRIZ ORIGINAL ---");
                 matrizOriginal(matriz);
 
+                System.out.println(" ");
+                System.out.println("--- TROCA TODOS OS VALORES QUE CONTÉM UM PARA DOIS ---");
+                trocaValoresDeUmParaDois(matriz);
+                
+                System.out.println(" ");
+                System.out.println("--- TROCA TODOS OS VALORES QUE CONTÉM ZERO PARA DOIS ---");
+                trocaValoresDeZeroParaDois(matriz);
+
             } finally {
                 buffer.close();
             }
@@ -66,7 +74,28 @@ public class MatrizesArquivos {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j] + "|");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
     }
+
+    private static void trocaValoresDeUmParaDois(String[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print((matriz[i][j].equals("1") ? 2 : matriz[i][j]) + "|");
+            }
+            System.out.println(" ");
+        }
+    }
+
+    private static void trocaValoresDeZeroParaDois(String[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print((matriz[i][j].equals("0") ? 2 : matriz[i][j]) + "|");
+            }
+            System.out.println(" ");
+        }
+    }
+
 }
